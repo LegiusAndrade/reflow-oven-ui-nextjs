@@ -13,10 +13,27 @@ const eslintConfig = [
   ...compat.config({
     extends: ["next/core-web-vitals", "next/typescript", "prettier"],
     rules: {
-      semi: ["error"],
-      quotes: ["error", "double"],
+      ident: ["error", 2],
+      "linebreak-style": ["error", "unix"],
+      "semi": ["error", "always"],
+      "quotes": ["error", "single"],
       "prefer-arrow-callback": ["error"],
       "prefer-template": ["error"],
+      "import-helpers/order-imports": [
+      "warn",
+      {
+        "newlinesBetween": "always",
+        "groups": [
+          ["/^react/", "/^next/", "/@next/"],
+          "/components/",
+          "/module/",
+          "/^@shared/",
+          "/absolute/",
+          ["parent", "sibling", "index"]
+        ],
+        "alphabetize": { "order": "asc", "ignoreCase": true }
+      }
+    ],
     }
   }),
 ];
