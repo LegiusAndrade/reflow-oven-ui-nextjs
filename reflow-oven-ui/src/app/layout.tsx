@@ -1,13 +1,16 @@
-import "./globals.css";
+import { Metadata } from 'next';
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export function generateMetadata(): Metadata {
+  return {
+    title: process.env.NEXT_PUBLIC_APP_TITLE,
+    description: process.env.NEXT_PUBLIC_APP_DESCRIPTION
+  };
+}
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={"antialiased"}>{children}</body>
+      <body>{children}</body>
     </html>
   );
 }
