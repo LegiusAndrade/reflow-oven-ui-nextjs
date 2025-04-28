@@ -7,7 +7,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 
 import { DarkTheme } from '@/shared/themes';
-import '../styles/globals.css';
+import '../shared/styles/globals.css';
 
 export function generateMetadata(): Metadata {
   console.log('Generating metadata...');
