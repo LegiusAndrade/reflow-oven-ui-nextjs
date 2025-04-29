@@ -1,16 +1,12 @@
 {
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
     "source.fixAll": true
   },
   "eslint.validate": ["javascript", "typescript", "typescriptreact"],
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "prettier.requireConfig": true,
-  "prettier.prettierPath": "reflow-oven-ui/node_modules/prettier",
+  "prettier.prettierPath": "./node_modules/prettier",
+  "files.eol": "\n"
 }

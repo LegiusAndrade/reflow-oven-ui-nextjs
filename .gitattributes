@@ -1,0 +1,16 @@
+# Normaliza todos os arquivos de texto para LF
+* text=auto eol=lf
+
+# Ignora arquivos binários
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+
+# Ignora node_modules
+node_modules/** -text
