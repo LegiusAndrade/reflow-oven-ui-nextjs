@@ -3,11 +3,11 @@ import { Roboto } from 'next/font/google';
 import React from 'react';
 
 import CssBaseline from '@mui/material/CssBaseline';
-import { ThemeProvider } from '@mui/material/styles';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 
-import { DarkTheme } from '@/shared/themes';
 import '../shared/styles/globals.css';
+import { AppThemeProvider } from '@/shared/contexts';
+
 
 export function generateMetadata(): Metadata {
   console.log('Generating metadata...');
@@ -31,12 +31,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={roboto.className}>
       <AppRouterCacheProvider>
         <body style={{ margin: 0, padding: 0 }}>
-          <ThemeProvider theme={DarkTheme}>
+          <AppThemeProvider>
             <React.Fragment>
               <CssBaseline />
               {children}
             </React.Fragment>
-          </ThemeProvider>
+          </AppThemeProvider>
         </body>
       </AppRouterCacheProvider>
     </html>
