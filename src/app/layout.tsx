@@ -5,9 +5,8 @@ import React from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 
-import '../shared/styles/globals.css';
 import { AppThemeProvider } from '@/shared/contexts';
-
+import '../shared/styles/globals.css';
 
 export function generateMetadata(): Metadata {
   console.log('Generating metadata...');
