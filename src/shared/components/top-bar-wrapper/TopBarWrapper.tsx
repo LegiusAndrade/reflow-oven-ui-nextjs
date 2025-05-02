@@ -1,14 +1,6 @@
 import { TopBar } from '../top-bar/TopBar';
 
-interface ITopBarWrapper {
-  showiconWifi?: boolean;
-  showIconWorld?: boolean;
-  showIconNotification?: boolean;
-  amountNotification?: number;
-  messageStatus?: string;
-}
-
 // Server component to wrap the TopBar (which is a client component)
-export const TopBarWrapper = (props: ITopBarWrapper) => {
+export const TopBarWrapper = (props: React.ComponentProps<typeof TopBar>) => {
   return <TopBar {...props} />;
 };

@@ -1,4 +1,4 @@
-import { TopBarWrapper } from '@/shared/components/top-bar-wrapper/TopBarWrapper';
+import { BottomBarWrapper, TopBarWrapper } from '@/shared/components';
 
 export default function Home() {
   return (
@@ -12,6 +12,8 @@ export default function Home() {
       ></TopBarWrapper>
 
       <h1>Reflow Oven</h1>
+
+      <BottomBarWrapper />
     </div>
   );
 }
