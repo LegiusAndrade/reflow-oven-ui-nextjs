@@ -3,11 +3,12 @@ import { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
 import React from 'react';
 
-import CssBaseline from '@mui/material/CssBaseline';
+import { CssBaseline } from '@mui/material';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 
 import ClockProvider from '@/shared/components/clock/Clock';
-import { AppThemeProvider } from '@/shared/contexts';
+import { AppThemeProvider, DrawerProvider } from '@/shared/contexts';
+import { PageBaseLayout } from '@/shared/layouts';
 
 export function generateMetadata(): Metadata {
   console.log('Generating metadata...');
@@ -33,10 +34,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <body style={{ margin: 0, padding: 0 }}>
           <AppThemeProvider>
             <ClockProvider>
-              <React.Fragment>
-                <CssBaseline />
-                {children}
-              </React.Fragment>
+              <DrawerProvider>
+                <PageBaseLayout>
+                  <React.Fragment>
+                    <CssBaseline />
+                    {children}
+                  </React.Fragment>
+                </PageBaseLayout>
+              </DrawerProvider>
             </ClockProvider>
           </AppThemeProvider>
         </body>

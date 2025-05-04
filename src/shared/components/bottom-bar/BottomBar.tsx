@@ -57,28 +57,48 @@ export const BottomBar: React.FC = () => {
             </Button>
           )}
         </Box>
-
+        
         {/* Temperature of oven */}
         <IconComponent
           titleTooltip="Temperatura forno"
-          icon={<DeveloperBoardIcon />}
+          icon={<DeveloperBoardIcon style={{
+            fill: theme.palette.text.primary,
+            width: 24,
+            height: 24,
+          }} />}
           textIcon="170°C"
           isFirstIcon={true} // Indicates this is the first icon (skip divider)
         />
 
         {/* Temperature of PCB */}
-        <IconComponent titleTooltip="Temperatura PCB" icon={<MicroWaveIcon />} textIcon="70°C" />
+        <IconComponent titleTooltip="Temperatura PCB" icon={<MicroWaveIcon style={{
+          fill: theme.palette.text.primary,
+          width: 24,
+          height: 24,
+        }}/>} textIcon="70°C" />
 
         {/* Fan speed for oven */}
-        <IconComponent titleTooltip="Velocidade ventilador forno" icon={<SpeedIcon />} textIcon="1500RPM" />
+        <IconComponent titleTooltip="Velocidade ventilador forno" icon={<SpeedIcon style={{
+          fill: theme.palette.text.primary,
+          width: 24,
+          height: 24,
+        }}/>} textIcon="1500RPM" />
 
         {/* Fan speed for PCB */}
-        <IconComponent titleTooltip="Velocidade ventilador PCB" icon={<SpeedIcon />} textIcon="800RPM" />
+        <IconComponent titleTooltip="Velocidade ventilador PCB" icon={<SpeedIcon style={{
+          fill: theme.palette.text.primary,
+          width: 24,
+          height: 24,
+        }}/>} textIcon="800RPM" />
 
         {/* Voltage and current through heating element */}
         <IconComponent
           titleTooltip="Tensão @ Corrente resistência"
-          icon={<HvacIcon />}
+          icon={<HvacIcon style={{
+            fill: theme.palette.text.primary,
+            width: 24,
+            height: 24,
+          }}/>}
           textIcon="110V @ 2A"
         />
       </Box>

@@ -23,10 +23,11 @@ interface IProps {
 const DrawerContext = createContext<IDrawerContextData | undefined>(undefined); // Create context with undefined initial value
 
 export const useDrawerContext = () => {
-  if (!DrawerContext) {
-    throw new Error('useDrawerContext must be used within a DrawerProvider'); // Error if context is used outside of provider
+  const context = useContext(DrawerContext);
+  if (context === undefined) {
+    throw new Error('useDrawerContext must be used within a DrawerProvider');
   }
-  return useContext(DrawerContext); // Return the context value
+  return context;
 };
 
 export const DrawerProvider: React.FC<IProps> = ({ children }) => {
