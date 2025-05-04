@@ -53,37 +53,30 @@ export const TopBar: React.FC<ITopBar> = ({
 
         {/* Notification Icon Section */}
         {showIconNotification && amountNotification > 0 && (
-          <Divider variant="middle" orientation="vertical" />
-        )}
-        {showIconNotification && amountNotification > 0 && (
-          <Typography variant="h6">
-            <Badge badgeContent={amountNotification} color="warning" overlap="rectangular">
-              <Icon>
+          <>
+            <Divider variant="middle" orientation="vertical" />
+            <Box display="flex" alignItems="center" paddingX={0.5}>
+              <Badge badgeContent={amountNotification} color="warning">
                 <NotificationsIcon />
-              </Icon>
-            </Badge>
-          </Typography>
+              </Badge>
+            </Box>
+          </>
         )}
 
         {/* Link Server Icon Section */}
         {showIconWorld && <Divider variant="middle" orientation="vertical" />}
         {showIconWorld && (
-          <Typography variant="h6" display={'flex'}>
-            <Icon>
-              <PublicIcon />
-            </Icon>
-          </Typography>
+          <Box display="flex" alignItems="center" paddingX={0.5}>
+            <PublicIcon fontSize="medium" />
+          </Box>
         )}
 
         {/* Wi-Fi Icon Section */}
         {showiconWifi && <Divider variant="middle" orientation="vertical" />}
         {showiconWifi && (
-          <Typography variant="h6" display={'flex'}>
-            <Icon sx={{ transform: 'rotate(-45deg)' }}>
-              {' '}
-              <WifiIcon />{' '}
-            </Icon>
-          </Typography>
+          <Box display="flex" alignItems="center" paddingX={0.5}>
+            <WifiIcon fontSize="medium" />
+          </Box>
         )}
 
         {/* Date Section */}
