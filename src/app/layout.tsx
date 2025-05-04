@@ -6,6 +6,7 @@ import React from 'react';
 import { CssBaseline } from '@mui/material';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 
+import { SideMenu } from '@/shared/components';
 import ClockProvider from '@/shared/components/clock/Clock';
 import { AppThemeProvider, DrawerProvider } from '@/shared/contexts';
 import { PageBaseLayout } from '@/shared/layouts';
@@ -33,16 +34,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <AppRouterCacheProvider>
         <body style={{ margin: 0, padding: 0 }}>
           <AppThemeProvider>
-            <ClockProvider>
-              <DrawerProvider>
-                <PageBaseLayout>
-                  <React.Fragment>
-                    <CssBaseline />
-                    {children}
-                  </React.Fragment>
-                </PageBaseLayout>
-              </DrawerProvider>
-            </ClockProvider>
+            <DrawerProvider>
+              <ClockProvider>
+                <SideMenu>
+                  <PageBaseLayout>
+                    <React.Fragment>
+                      <CssBaseline />
+                      {children}
+                    </React.Fragment>
+                  </PageBaseLayout>
+                </SideMenu>
+              </ClockProvider>
+            </DrawerProvider>
           </AppThemeProvider>
         </body>
       </AppRouterCacheProvider>

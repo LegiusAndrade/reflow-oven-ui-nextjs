@@ -3,7 +3,7 @@
 import { createContext, useCallback, useContext, useState } from 'react';
 
 interface IDrawerOption {
-  icon: string; // Icon name (used inside MUI <Icon>)
+  icon: React.ReactNode; // Icon name (used inside MUI <Icon>)
   path: string; // Path for the route
   label: string; // Label text for the option
 }

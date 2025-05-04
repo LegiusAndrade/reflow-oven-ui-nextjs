@@ -4,7 +4,7 @@ import React from 'react';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import PublicIcon from '@mui/icons-material/Public';
 import WifiIcon from '@mui/icons-material/Wifi';
-import { Badge, Box, Divider, Icon, LinearProgress, Paper, Typography, useTheme } from '@mui/material';
+import { Badge, Box, Divider, LinearProgress, Paper, Typography, useTheme } from '@mui/material';
 
 import { useClockContext } from '../clock/Clock';
 

@@ -1,5 +1,7 @@
 'use client';
-import { Box, Button, Icon, Paper, Theme, Typography, useMediaQuery, useTheme } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
+import MenuOpenIcon from '@mui/icons-material/MenuOpen';
+import { Box, Button, Paper, Theme, Typography, useMediaQuery, useTheme } from '@mui/material';
 
 import DeveloperBoardIcon from '@/shared/assets/icons/developer_board.svg'; // Importing a developer board icon
 import HvacIcon from '@/shared/assets/icons/hvac.svg'; // Importing a HVAC icon
@@ -16,6 +18,7 @@ export const BottomBar: React.FC = () => {
   const drawerContext = useDrawerContext(); // Access drawer toggle function from context
 
   const toggleDrawerOpen = drawerContext?.toggleDrawerOpen;
+  const isDrawerOpen = drawerContext?.isDrawerOpen;
 
   // Check if screen size is less than or equal to 'lg' breakpoint (≤1200px)
   const lgDown = useMediaQuery((theme: Theme) => theme.breakpoints.down('lg')); // Check if screen size is less than or equal to large breakpoint 1200px
@@ -43,7 +46,7 @@ export const BottomBar: React.FC = () => {
               color="primary"
               disableElevation
               variant={'text'}
-              startIcon={<Icon>menu</Icon>} // Material icon for the button
+              startIcon={isDrawerOpen ? <MenuOpenIcon /> : <MenuIcon />} // Material icon for the button
             >
               <Typography
                 variant="button"
@@ -57,48 +60,80 @@ export const BottomBar: React.FC = () => {
             </Button>
           )}
         </Box>
-        
+
         {/* Temperature of oven */}
         <IconComponent
           titleTooltip="Temperatura forno"
-          icon={<DeveloperBoardIcon style={{
-            fill: theme.palette.text.primary,
-            width: 24,
-            height: 24,
-          }} />}
+          icon={
+            <DeveloperBoardIcon
+              style={{
+                fill: theme.palette.text.primary,
+                width: 24,
+                height: 24,
+              }}
+            />
+          }
           textIcon="170°C"
           isFirstIcon={true} // Indicates this is the first icon (skip divider)
         />
 
         {/* Temperature of PCB */}
-        <IconComponent titleTooltip="Temperatura PCB" icon={<MicroWaveIcon style={{
-          fill: theme.palette.text.primary,
-          width: 24,
-          height: 24,
-        }}/>} textIcon="70°C" />
+        <IconComponent
+          titleTooltip="Temperatura PCB"
+          icon={
+            <MicroWaveIcon
+              style={{
+                fill: theme.palette.text.primary,
+                width: 24,
+                height: 24,
+              }}
+            />
+          }
+          textIcon="70°C"
+        />
 
         {/* Fan speed for oven */}
-        <IconComponent titleTooltip="Velocidade ventilador forno" icon={<SpeedIcon style={{
-          fill: theme.palette.text.primary,
-          width: 24,
-          height: 24,
-        }}/>} textIcon="1500RPM" />
+        <IconComponent
+          titleTooltip="Velocidade ventilador forno"
+          icon={
+            <SpeedIcon
+              style={{
+                fill: theme.palette.text.primary,
+                width: 24,
+                height: 24,
+              }}
+            />
+          }
+          textIcon="1500RPM"
+        />
 
         {/* Fan speed for PCB */}
-        <IconComponent titleTooltip="Velocidade ventilador PCB" icon={<SpeedIcon style={{
-          fill: theme.palette.text.primary,
-          width: 24,
-          height: 24,
-        }}/>} textIcon="800RPM" />
+        <IconComponent
+          titleTooltip="Velocidade ventilador PCB"
+          icon={
+            <SpeedIcon
+              style={{
+                fill: theme.palette.text.primary,
+                width: 24,
+                height: 24,
+              }}
+            />
+          }
+          textIcon="800RPM"
+        />
 
         {/* Voltage and current through heating element */}
         <IconComponent
           titleTooltip="Tensão @ Corrente resistência"
-          icon={<HvacIcon style={{
-            fill: theme.palette.text.primary,
-            width: 24,
-            height: 24,
-          }}/>}
+          icon={
+            <HvacIcon
+              style={{
+                fill: theme.palette.text.primary,
+                width: 24,
+                height: 24,
+              }}
+            />
+          }
           textIcon="110V @ 2A"
         />
       </Box>

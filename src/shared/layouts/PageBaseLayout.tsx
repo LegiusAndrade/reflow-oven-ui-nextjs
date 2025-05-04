@@ -2,7 +2,8 @@
 // This file is part of the "shared" module, which contains common components and utilities used across the application.
 import React from 'react';
 
-import { Box, Icon, IconButton, Paper, Theme, Typography, useMediaQuery, useTheme } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
+import { Box, IconButton, Paper, Theme, Typography, useMediaQuery, useTheme } from '@mui/material';
 
 import { BottomBarWrapper, TopBarWrapper } from '../components';
 import { useDrawerContext } from '../contexts';
@@ -47,7 +48,7 @@ export const PageBaseLayout: React.FC<IPageBaseLayout> = ({ children }) => {
         {/* Show menu icon on small screens */}
         {smDown && (
           <IconButton onClick={toggleDrawerOpen}>
-            <Icon>menu</Icon>
+            <MenuIcon />
           </IconButton>
         )}
 
